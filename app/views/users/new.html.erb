@@ -1,0 +1,29 @@
+<% provide(:title,"Sign up") %>
+<h1 class="row col-md-6 col-md-offset-3">Sign up</h1>
+<div class="row">
+	<div class="col-md-6 col-md-offset-3 ">
+		<%= form_for(@user) do |f| %>
+			<%= render "shared/error_messages", object: f.object %>
+
+			<p>
+				<%= f.label :name %>
+				<%= f.text_field :name, class: "form-control" %>
+			</p>
+			<p>
+				<%= f.label :email %>
+				<%= f.text_field :email, class: "form-control" %>
+			</p>
+			<p>
+				<%= f.label :password %>
+				<%= f.password_field :password, class: "form-control" %>
+			</p>
+			<p>
+				<%= f.label :password_confirmation %>
+				<%= f.password_field :password_confirmation, class: "form-control" %>
+			</p>
+			<p>
+				<%= f.submit("Submit", class: "btn btn-primary") %>
+			</p>	
+		<% end %>
+	</div>
+</div>

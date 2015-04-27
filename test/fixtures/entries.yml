@@ -1,0 +1,28 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+most_recent:
+  title: MyString
+  body: MyText
+  created_at: <%= 5.minutes.ago %>
+  user: michael
+
+two:
+  title: MyString2
+  body: MyText2
+  created_at: <%= 20.minutes.ago %>
+  user: michael
+
+three:
+  title: MyString3
+  body: MyText3
+  created_at: <%= 3.hours.ago %>
+  user: michael
+
+
+<% 30.times do |n| %>
+entry_<%= n %>:
+  title: <%= Faker::Lorem.sentence(5) %>
+  body: <%= Faker::Lorem.sentence(15) %>
+  created_at: <%= 42.days.ago %>
+  user: michael
+<% end %>
