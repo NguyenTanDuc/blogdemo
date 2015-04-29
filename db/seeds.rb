@@ -39,3 +39,10 @@ following = users[2..50]
 followers = users[3..40]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
+
+# Comments
+entries = Entry.order(:created_at).take(6)
+30.times do |n|
+  content = Faker::Lorem.sentence(10)
+  entries.each { |entry| Comment.create!(content: content, user_id: n+1, entry_id: entry.id) }  
+end

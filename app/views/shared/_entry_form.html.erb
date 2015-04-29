@@ -1,11 +1,11 @@
 <%= form_for(@entry) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-  <div class="field">
+  <div>
   	<p>
-  		<%= f.text_area :title, placeholder: "Compose new title..." %>
+  		<%= f.text_area :title, placeholder: "Compose new title...", cols: "40" %>
 	</p>
 	<p>
-    	<%= f.text_area :body, placeholder: "Compose new body..." %>
+    	<%= f.text_area :body, placeholder: "Compose new body...", cols: "40", rows: "8" %>
     </p>
   </div>
   <%= f.submit "Post", class: "btn btn-primary" %>

@@ -13,6 +13,15 @@ class EntriesController < ApplicationController
 		end
 	end
 
+	def show
+		@entry = Entry.find(params[:id])
+		@user = User.find(@entry.user_id)
+		if is_logged_in?
+			@comment = Comment.new(user_id: current_user.id, entry_id: @entry.id)
+		end
+		@comments = @entry.comments.paginate(page: params[:page],per_page: 10)
+	end
+
 	def destroy
 		@entry.destroy
 	    flash[:success] = "Entry deleted"

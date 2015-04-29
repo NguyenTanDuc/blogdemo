@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+like:
+  content: That was very nice
+  user_id: 1
+  entry_id: 1
+  created_at: <%= 1.years.ago %>
+
+unlike:
+  content: Go go go
+  user_id: 2
+  entry_id: 1
+  created_at: <%= 20.minutes.ago %>
+
+dislike:
+  content: Bad very bad
+  user_id: 3
+  entry_id: 1
+  created_at: <%= 1.minutes.ago %>
+
+<% 30.times do |n| %>
+comment_<%= n %>:
+  content: <%= Faker::Lorem.sentence(5) %>
+  created_at: <%= 1.days.ago %>
+  entry_id: 2
+  user_id: 1
+<% end %>

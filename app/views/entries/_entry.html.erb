@@ -1,18 +1,24 @@
-<li id="entry-<%= entry.id %>">
-  <%= link_to make_gravatar(entry.user, size: 50), entry.user %>
-  <span class="user"><%= link_to entry.user.name, entry.user %></span>
-  <p>
-  	<span class="title"><%= entry.title %></span>
-  </p>
-  <p>
-	<span class="body"><%= entry.body %></span>
-	<span class="timestamp">
-    	Posted <%= time_ago_in_words(entry.created_at) %> ago.
-      <% if current_user?(entry.user) %>
-        <%= link_to "delete", entry, method: :delete,
-                                     data: { confirm: "You sure?" },
-                                     class: "pull-right" %>
-      <% end %>
- 	</span>
-  </p>
-</li>
+<div class="row entry-body" id="entry-<%= entry.id %>">
+  <div class="col-md-2">
+    <%= link_to make_gravatar(entry.user, size: 70), entry.user %>
+  </div>
+  <div class="col-md-10">
+    <p>
+      <span class="user"><%= link_to entry.user.name, entry.user %></span>
+    </p>
+    	<span class="title"><%= entry.title %></span>
+    <p>
+  	 <span class="body"><%= entry.body %></span>
+    </p>
+  	<span class="timestamp">
+      	Posted <%= time_ago_in_words(entry.created_at) %> ago.
+        <span class="pull-right">
+          <%= link_to "Show", entry %> |
+          <% if current_user?(entry.user) %>
+            <%= link_to "Delete", entry, method: :delete,
+                                         data: { confirm: "You sure?" } %>
+          <% end %>
+        </span>
+   	</span>    
+  </div>
+</div>

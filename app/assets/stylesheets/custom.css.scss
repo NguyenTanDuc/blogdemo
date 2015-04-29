@@ -100,6 +100,7 @@ aside {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
   }
+
   .user {
     margin-top: 5em;
     padding-top: 0;
@@ -116,16 +117,24 @@ aside {
   .title {
     display: block;
   }
-  .timestamp {
-    color: $gray-light;
-    display: block;
-  }
+  
   .gravatar {
     float: left;
     margin-right: 10px;
     margin-top: 5px;
   }
 }
+
+.comment li{
+  display: block;
+  border-top: 1px solid #e8e8e8;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.timestamp {
+    color: $gray-light;
+    display: block;
+  }
 
 .stats {
   overflow: auto;
@@ -148,4 +157,19 @@ aside {
   strong {
     display: block;
   }
+}
+
+.title{
+  font-weight: bold
+}
+.entry-body{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $gray-lighter;
+}
+.user a{
+  font-weight: italic;
+  font-family: segoe;
+  font-size: 18px;
+  margin-bottom: 5px;
 }

@@ -1,0 +1,28 @@
+<% provide(:title, @user.name) %>
+<div class="col-md-8 col-md-offset-2">
+	<div class="row">
+		<div class="col-md-2">
+			<%= make_gravatar @user, size: 100 %>	
+		</div>
+		<div class="col-md-10">
+			<h3 class="user"><%= link_to @user.name, user_path(@user) %></h3>
+			<p class="title"><%= @entry.title %></p>
+			<p class="body"><%= @entry.body %></p>
+		</div>
+	</div>
+	<p><hr></p>
+
+	<div class="row">
+		<%= render "shared/comment_form" if is_logged_in? %>
+	</div>
+
+	<div class="row">
+		<% if  @entry.comments.any? %>
+			<h3>Comments(<%= @entry.comments.count %>)</h3>
+			<div class="comment">
+				<%= render @comments %>
+			</div>
+			<%= will_paginate @comments %>
+		<% end %>
+	</div>
+</div>
