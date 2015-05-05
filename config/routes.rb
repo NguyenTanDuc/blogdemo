@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :entries,             only: [:create, :show, :destroy]
   resources :relationships,       only: [:create, :destroy]
-  resources :comments,            only: [:create, :destroy]
+  resources :comments,            only: [:create, :new, :destroy]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

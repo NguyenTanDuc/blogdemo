@@ -6,8 +6,9 @@ class CommentsController < ApplicationController
 		if @comment.save
 			flash[:success] = "Comment created"
 			redirect_to @comment.entry
-		else
-			render 'entries/show'
+		else		
+			flash[:danger] = "Your comment must be not blank or too long"
+			redirect_to @comment.entry
 		end
 	end
 
